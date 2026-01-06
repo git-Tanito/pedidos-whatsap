@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antonio Estrada | Menú Digital</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>ESTRADA <span>FOOD</span></h1>
+        <p>Pide directo a nuestro WhatsApp</p>
+    </header>
+
+    <nav class="categorias">
+        <button class="btn-cat active">Todos</button>
+        <button class="btn-cat">Burgers</button>
+        <button class="btn-cat">Snacks</button>
+        <button class="btn-cat">Bebidas</button>
+    </nav>
+
+    <main class="contenedor-productos" id="contenedor-productos">
+        <div class="producto-card">
+            <img src="imagenes/pizza-2589575_1280.jpg" alt="Producto">
+            <div class="producto-info">
+                <h3>Burger Estrada Pro</h3>
+                <p>Doble carne, queso cheddar y tocino crujiente.</p>
+                <div class="precio-accion">
+                    <span class="precio">$150</span>
+                    <button class="btn-agregar">+</button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <div class="carrito-bar">
+        <div class="carrito-info">
+            <span id="cantidad-items">2</span> productos
+            <strong>Total: $210</strong>
+        </div>
+        <button class="btn-ver-pedido">Ver Pedido</button>
+    </div>
+
+</body>
+
+</html>
