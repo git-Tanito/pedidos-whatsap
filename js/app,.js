@@ -2,6 +2,12 @@ document.addEventListener("DOMContentLoaded", iniciarApp);
 const contenedorProductos = document.querySelector("#contenedor-productos");
 const cantidadCarrito = document.querySelector("#cantidad-items");
 
+const total = document.querySelector("#total");
+console.log(total);
+
+const verPedido = document.querySelector(".btn-ver-pedido");
+verPedido.addEventListener("click", mostrarPedido);
+
 let carrito = [];
 
 function iniciarApp() {
@@ -25,6 +31,25 @@ function iniciarApp() {
 }
 
 function agregarCarrito(id) {
-  const pedido = productos.filter((producto) => producto.id === id);
-  console.log(pedido);
+  // traer el pedido completo
+
+  const pedido = productos.find((producto) => producto.id === id);
+  carrito = [...carrito, pedido];
+
+  const resultado = carrito.reduce((acc, producto) => {
+    return acc + producto.precio;
+  }, 0);
+  total.textContent = `Total: $ ${resultado}`;
+
+  console.log(resultado);
+
+  cantidadCarrito.textContent = carrito.length;
+}
+
+function mostrarPedido(e) {
+  e.preventDefault();
+  carrito.forEach((producto) => {
+    const pedidoCard = document.createElement("div");
+    console.log(pedidoCard);
+  });
 }

@@ -11,6 +11,25 @@
 
 <body>
 
+    <div class="pedido hidden">
+        <div class="p-card">
+            <div class="producto-info">
+                <h3>Burger Estrada Pro</h3>
+                <p>Doble carne, queso cheddar y tocino crujiente.</p>
+                <div class="precio-accion">
+                    <span class="precio">$150</span>
+                    <button class="btn-agregar">-</button>
+                </div>
+            </div>
+            <h3 class="total precio">Total : <span></span></h3>
+            <div class="botones">
+                <button class="btn">salir</button>
+                <button class="btn">enviar</button>
+            </div>
+        </div>
+
+    </div>
+
     <header>
         <h1>ESTRADA <span>FOOD</span></h1>
         <p>Pide directo a nuestro WhatsApp</p>
@@ -52,7 +71,7 @@
     <div class="carrito-bar">
         <div class="carrito-info">
             <span id="cantidad-items">0</span> productos
-            <strong>Total: $</strong>
+            <strong id="total">Total: $</strong>
         </div>
         <button class="btn-ver-pedido">Ver Pedido</button>
     </div>
