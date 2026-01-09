@@ -24,7 +24,8 @@ body {
   color: var(--text-main);
   font-family: "Segoe UI", sans-serif;
   margin: 0;
-  padding-bottom: 8rem; /* 80px */
+
+  position: relative;
 }
 
 /* Tipografía */
@@ -193,17 +194,8 @@ header h1 span {
   font-size: 1.4rem;
   cursor: pointer;
 }
-.pedido {
-  background-color: var(--card-bg);
-  position: absolute;
-  display: flex;
-  width: 100vw;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
-  z-index: 101;
-}
-.p-card {
+
+.pedido-card {
   border: solid 1px var(--primary);
 }
 .btn-eliminar {
@@ -241,4 +233,92 @@ header h1 span {
 }
 .hidden {
   display: none;
+}
+.flex {
+  display: flex;
+}
+
+.imagen {
+  background: url("../imagenes/pizza-2589575_1280.jpg");
+  width: 100%;
+  height: 40rem;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.atras {
+  display: flex;
+  justify-content: center;
+  width: 5rem;
+  position: absolute;
+  color: var(--text-main);
+  top: 2rem;
+  left: 2rem;
+  font-size: 4rem;
+
+  border-radius: 50%;
+  align-items: center;
+  text-align: center;
+}
+.producto-modal {
+  background-color: var(--text-muted);
+  margin: 0 auto;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 2rem;
+}
+.producto-modal {
+  position: absolute;
+  background-color: var(--card-bg);
+  border-radius: 1rem;
+  height: auto;
+  padding: 1rem;
+  top: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.producto-modal h3,
+p {
+  color: var(--text-main);
+}
+.precio-modal {
+  display: flex;
+  justify-content: space-between;
+  font-size: 2rem;
+  padding: 1rem;
+}
+.contador {
+  display: flex;
+  gap: 1rem;
+  width: 30%;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+.modal-agregar {
+  border: none;
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  font-weight: 500;
+}
+.nota {
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+details {
+  margin-top: 10px;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 600;
+  padding-bottom: 1rem;
+}
+
+details[open] summary {
+  color: #ff6b00;
 }
