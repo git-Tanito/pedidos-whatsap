@@ -57,30 +57,64 @@ function agregar(id) {
 
                 <details>
                     <summary>Agregar nota</summary>
-                    <input type="text" class="nota" maxlength="20" placeholder="Ej. Sin cebolla">
+                    <input id="nota" type="text" class="nota" maxlength="20" placeholder="Ej. Sin cebolla">
                 </details>
 
                 <div class="precio-modal">
                     <div class="contador">
-                        <button id="menos" class="menos" disabled>−</button>
-                        <span id="cantidad" class="cantidad">0</span>
+                        <button disabled id="menos" class="menos">−</button>
+                        <span  id="cantidad" class="cantidad">0</span>
                         <button id="mas" class="mas">+</button>
                     </div>
 
                     <button class="modal-agregar">
                         <span>Agregar</span>
-                        MX $${precio}
+                        Mx $${precio}
                     </button>
                 </div>
             </div>
   `;
+  const nota = productoCliente.querySelector("#nota");
   const divImagen = productoCliente.querySelector(".imagen");
+  const menos = productoCliente.querySelector("#menos");
+  const mas = productoCliente.querySelector("#mas");
 
   divImagen.style.backgroundImage = `url(${imagen})`;
 
+  menos.addEventListener("click", () => {
+    restarCarrito(nombre, precio);
+  });
+  mas.addEventListener("click", () => {
+    sumarCarrito(nombre, precio);
+  });
   const salirMenu = productoCliente.querySelector("#atras");
   salirMenu.addEventListener("click", regresarmenu);
   modalCLiente.appendChild(productoCliente);
+}
+
+function sumarCarrito(nombre, precio) {
+  const menos = document.querySelector("#menos");
+  const cantidad = document.querySelector("#cantidad");
+  let cantidadActual = Number(cantidad.textContent);
+  cantidadActual++;
+  cantidad.textContent = cantidadActual;
+  if (cantidadActual >= 1) {
+    menos.disabled = false;
+    menos.style.opacity = "1";
+  }
+  console.log(precio);
+}
+function restarCarrito(nombre, precio) {
+  const menos = document.querySelector("#menos");
+  const cantidad = document.querySelector("#cantidad");
+  let cantidadValor = Number(cantidad.textContent);
+  cantidadValor--;
+  cantidad.textContent = cantidadValor;
+  if (cantidadValor <= 0) {
+    menos.disabled = true;
+    menos.style.opacity = ".4";
+  }
+  console.log(precio);
 }
 
 function mostrarModal() {
